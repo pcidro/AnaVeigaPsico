@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./hero.module.css";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Hero() {
   return (
     <>
       <section className={styles.hero} id="home">
-        {/* Imagem de Fundo - Desktop */}
         <div className={styles.heroBgDesktop}>
           <Image
             src="/img/herodesktop.png"
@@ -18,7 +18,6 @@ export default function Hero() {
           />
         </div>
 
-        {/* Imagem de Fundo - Mobile */}
         <div className={styles.heroBgMobile}>
           <Image
             src="/img/heromobile.png"
@@ -48,6 +47,7 @@ export default function Hero() {
 
           <Link href="#agendamento" id="btn-agendar" className={styles.heroCta}>
             Agendar minha consulta
+            <FaWhatsapp size={30} />
           </Link>
         </div>
       </section>

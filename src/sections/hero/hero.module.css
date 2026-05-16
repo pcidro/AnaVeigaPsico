@@ -13,7 +13,6 @@
   overflow: hidden;
 }
 
-/* Containers das imagens com Next Image fill */
 .heroBgDesktop {
   position: absolute;
   top: 0;
@@ -42,11 +41,10 @@
   display: none;
 }
 
-/* Container do texto */
 .heroContent {
   position: relative;
   z-index: 2;
-  max-width: 850px;
+  max-width: 1200px;
   padding: 0 5%;
   display: flex;
   flex-direction: column;
@@ -84,13 +82,14 @@
 .heroCta {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   justify-content: center;
   background-color: var(--color-secondary);
   color: var(--color-primary);
   text-decoration: none;
   font-weight: bold;
   font-size: 1.125rem;
-  padding: 1rem 2.5rem;
+  padding: 2rem 4.5rem;
   border-radius: 50px;
   font-family: var(--font-inter);
   transition: all 0.3s ease;
@@ -232,10 +231,6 @@
 
   .heroTitle {
     font-size: 1.6rem;
-  }
-
-  .heroLabel {
-    display: none;
   }
 
   .heroOverlay {

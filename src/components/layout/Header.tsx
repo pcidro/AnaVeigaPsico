@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.css";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,6 +60,7 @@ export default function Header() {
             className={`${styles.btnCta} ${styles.desktopCta}`}
           >
             Agende uma Sessão
+            <FaWhatsapp size={22} />
           </Link>
 
           <button
@@ -145,6 +147,7 @@ export default function Header() {
             onClick={closeMenu}
           >
             Agende uma Sessão
+            <FaWhatsapp size={22} />
           </Link>
         </div>
       </aside>
