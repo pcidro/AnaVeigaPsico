@@ -1,0 +1,261 @@
+:root {
+  --color-primary: #2d5a45;
+  --color-secondary: #ebded4;
+  --color-white: #e2e2e2;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Containers das imagens com Next Image fill */
+.heroBgDesktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.heroBgMobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center right;
+}
+
+.heroOverlay {
+  display: none;
+}
+
+/* Container do texto */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heroLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-secondary);
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-inter);
+}
+
+.heroTitle {
+  font-family: var(--font-playfair);
+  font-size: 4.5rem;
+  line-height: 1.1;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+}
+
+.heroDescription {
+  font-family: var(--font-inter);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.125rem;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-family: var(--font-inter);
+  transition: all 0.3s ease;
+}
+
+.heroCta:hover {
+  background-color: #d1c1b3;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   LETREIRO INFINITO (MARQUEE)
+   ========================================= */
+.scrollingStrip {
+  background-color: var(--color-primary);
+  width: 100%;
+  padding: 1.2rem 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(235, 222, 212, 0.2);
+}
+
+.scrollingTrack {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 35s linear infinite;
+}
+
+.scrollingContent span {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+  white-space: nowrap;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================================
+   RESPONSIVIDADE 
+   ========================================= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding: 0 20px 80px 20px;
+    align-items: flex-end;
+  }
+
+  .heroOverlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(45, 60, 59, 0.55) 65%,
+      rgba(35, 70, 59, 0.97) 78%
+    );
+  }
+
+  .heroBgDesktop {
+    display: none;
+  }
+
+  .heroBgMobile {
+    display: block;
+  }
+
+  .bgImage {
+    object-position: center -120px;
+    object-fit: cover;
+  }
+
+  .heroContent {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heroLabel {
+    display: inline-block;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    line-height: 1.4;
+    color: #ffffff;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 1.2rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    padding: 0 10px;
+  }
+
+  .heroDescription {
+    font-size: 1.05rem;
+    max-width: 100%;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+
+  .heroCta {
+    width: 90%;
+    max-width: 320px;
+    padding: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .heroContent {
+    margin-top: 62vh;
+  }
+
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+
+  .heroLabel {
+    display: none;
+  }
+
+  .heroOverlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(45, 60, 59, 0.55) 65%,
+      rgba(35, 70, 59, 0.97) 78%
+    );
+  }
+
+  .heroDescription {
+    font-size: 0.95rem;
+  }
+}
