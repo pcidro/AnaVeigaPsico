@@ -35,8 +35,7 @@ export default function Depoimentos() {
   const pauseDelayRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const show = useCallback((index: number) => {
-    const nextIndex =
-      (index + testimonials.length) % testimonials.length;
+    const nextIndex = (index + testimonials.length) % testimonials.length;
 
     setActiveIndex(nextIndex);
   }, []);
@@ -84,7 +83,7 @@ export default function Depoimentos() {
   }, [stopPause]);
 
   return (
-    <section className={styles.section} id="depoimentos">
+    <section className={`${styles.section}`} id="depoimentos">
       <div className={styles.container}>
         <header className={styles.header}>
           <span className={styles.eyebrow}>Depoimentos</span>

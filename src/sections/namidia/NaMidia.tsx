@@ -1,11 +1,116 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./namidia.module.css";
 import { FiArrowRight } from "react-icons/fi";
 import { FaMicrophone } from "react-icons/fa";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function NaMidia() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const cardsRef = useRef<HTMLElement[]>([]);
+
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    const cards = cardsRef.current;
+
+    if (!section || cards.length === 0) {
+      return;
+    }
+
+    const mm = gsap.matchMedia();
+
+    const ctx = gsap.context(() => {
+      mm.add(
+        {
+          isDesktop: "(min-width: 541px)",
+          reduceMotion: "(prefers-reduced-motion: reduce)",
+        },
+        ({ conditions }) => {
+          const { isDesktop, reduceMotion } = conditions as {
+            isDesktop: boolean;
+            reduceMotion: boolean;
+          };
+
+          if (!isDesktop || reduceMotion) {
+            gsap.set(cards, { clearProps: "opacity,transform" });
+            return;
+          }
+
+          const getBaseX = (card: HTMLElement) => {
+            const transform = window.getComputedStyle(card).transform;
+
+            if (!transform || transform === "none") {
+              return 0;
+            }
+
+            return new DOMMatrixReadOnly(transform).m41;
+          };
+
+          const baseXByCard = new WeakMap<HTMLElement, number>();
+
+          cards.forEach((card) => {
+            baseXByCard.set(card, getBaseX(card));
+          });
+
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: section,
+                start: "top 40%",
+                once: true,
+              },
+              onComplete: () => {
+                gsap.set(cards, { clearProps: "opacity,transform" });
+              },
+            })
+            .fromTo(
+              cards,
+              {
+                opacity: 0,
+                x: (_, card) => {
+                  const element = card as HTMLElement;
+                  const baseX = baseXByCard.get(element) ?? 0;
+                  const direction =
+                    element.dataset.mediaSide === "left" ? -1 : 1;
+
+                  return baseX + direction * 70;
+                },
+              },
+              {
+                opacity: 1,
+                x: (_, card) => baseXByCard.get(card as HTMLElement) ?? 0,
+                duration: 0.8,
+                ease: "power3.out",
+                stagger: 0.18,
+              },
+            );
+        },
+      );
+    }, section);
+
+    return () => {
+      mm.revert();
+      ctx.revert();
+    };
+  }, []);
+
+  const registerCard = (card: HTMLElement | null) => {
+    if (card && !cardsRef.current.includes(card)) {
+      cardsRef.current.push(card);
+    }
+  };
+
   return (
-    <section className={styles.section} id="na-midia">
+    <section
+      ref={sectionRef}
+      className={`${styles.section} animeLeft`}
+      id="na-midia"
+    >
       <div className={styles.container}>
         <header className={styles.header}>
           <span className={styles.eyebrow}>Presença & Voz</span>
@@ -17,7 +122,11 @@ export default function NaMidia() {
 
         <div className={styles.grid}>
           <div className={styles.columnEdge}>
-            <article className={styles.card}>
+            <article
+              ref={registerCard}
+              data-media-side="left"
+              className={styles.card}
+            >
               <div className={styles.cardHeader}>
                 <Image
                   src="/img/cbn.png"
@@ -36,7 +145,11 @@ export default function NaMidia() {
               </p>
             </article>
 
-            <article className={styles.card}>
+            <article
+              ref={registerCard}
+              data-media-side="left"
+              className={styles.card}
+            >
               <div className={styles.cardHeader}>
                 <Image
                   src="/img/escoladenegocios.png"
@@ -70,7 +183,11 @@ export default function NaMidia() {
           </div>
 
           <div className={styles.columnEdge}>
-            <article className={styles.card}>
+            <article
+              ref={registerCard}
+              data-media-side="right"
+              className={styles.card}
+            >
               <div className={styles.cardHeader}>
                 <Image
                   src="/img/spotifylogo.png"
@@ -92,7 +209,11 @@ export default function NaMidia() {
               </a>
             </article>
 
-            <article className={styles.card}>
+            <article
+              ref={registerCard}
+              data-media-side="right"
+              className={styles.card}
+            >
               <div className={styles.cardHeader}>
                 <h3 className={styles.cardTitle}>
                   Palestras e workshops personalizados

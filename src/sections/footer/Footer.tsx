@@ -31,7 +31,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} animeLeft`}>
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.brandColumn}>

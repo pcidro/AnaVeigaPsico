@@ -4,7 +4,7 @@ import styles from "./sobremim.module.css";
 
 export default function SobreMim() {
   return (
-    <section className={styles.section} id="sobre">
+    <section className={`${styles.section}`} id="sobre">
       <div className={styles.container}>
         <div className={styles.media}>
           <div className={styles.badge}>
@@ -54,8 +54,8 @@ export default function SobreMim() {
             <p>
               Minha trajetória inclui{" "}
               <strong className={styles.highlight}>
-                atuação voluntária em uma ONG de apoio a mulheres em situação
-                de violência
+                atuação voluntária em uma ONG de apoio a mulheres em situação de
+                violência
               </strong>
               , experiência que marcou profundamente minha prática. Hoje, tenho
               um olhar especial para a{" "}

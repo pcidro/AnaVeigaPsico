@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import styles from "./howicanhelp.module.css";
 import {
   FaRegHeart,
@@ -15,7 +14,7 @@ import {
 
 const HowICanHelp = () => {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section}`}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Como posso contribuir e te ajudar?</h2>
@@ -72,16 +71,16 @@ const HowICanHelp = () => {
         <div className={styles.separator}></div>
 
         <div className={styles.header}>
-          <h2 className={styles.title}>Minha Abordagem</h2>
+          <h2 className={styles.title}>Como funcionam os atendimentos?</h2>
         </div>
-
         <div className={styles.timelineContainer}>
           <div className={`${styles.timelineItem} ${styles.left}`}>
             <div className={styles.content}>
-              <h3 className={styles.timelineTitle}>1. Acolhimento</h3>
+              <h3 className={styles.timelineTitle}>1. Primeira conversa</h3>
               <p className={styles.timelineText}>
-                Escuta atenta para entender sua história e sintomas sem
-                julgamentos.
+                No primeiro encontro, conversamos com calma para que eu possa
+                conhecer sua história, entender o que você está vivendo e
+                acolher suas demandas.
               </p>
             </div>
             <div className={styles.iconPlaceholder}>
@@ -94,20 +93,27 @@ const HowICanHelp = () => {
               <FaBullseye />
             </div>
             <div className={styles.content}>
-              <h3 className={styles.timelineTitle}>2. Definição do Objetivo</h3>
+              <h3 className={styles.timelineTitle}>
+                2. Entendimento dos objetivos
+              </h3>
               <p className={styles.timelineText}>
-                Alinhamento de expectativas e transformação de incômodos em
-                metas reais.
+                Juntas, identificamos o que está causando sofrimento e quais
+                aspectos você deseja compreender, elaborar e transformar ao
+                longo do processo.
               </p>
             </div>
           </div>
 
           <div className={`${styles.timelineItem} ${styles.left}`}>
             <div className={styles.content}>
-              <h3 className={styles.timelineTitle}>3. Plano Personalizado</h3>
+              <h3 className={styles.timelineTitle}>
+                3. Início do acompanhamento
+              </h3>
               <p className={styles.timelineText}>
-                Construção de um plano individual com estratégias para a sua
-                necessidade.
+                As sessões são conduzidas em um ambiente acolhedor e
+                confidencial, onde você terá um espaço seguro para falar sobre
+                suas experiências, emoções e desafios, no seu próprio tempo e
+                com total respeito à sua história.
               </p>
             </div>
             <div className={styles.iconPlaceholder}>
@@ -120,20 +126,24 @@ const HowICanHelp = () => {
               <FaChartLine />
             </div>
             <div className={styles.content}>
-              <h3 className={styles.timelineTitle}>4. Reavaliações</h3>
+              <h3 className={styles.timelineTitle}>4. Evolução contínua</h3>
               <p className={styles.timelineText}>
-                Revisões periódicas do progresso e ajustes no plano conforme sua
-                evolução.
+                Ao longo do processo, acompanhamos seus avanços e percepções,
+                promovendo reflexões e ajustes que favoreçam seu bem-estar
+                emocional.
               </p>
             </div>
           </div>
 
           <div className={`${styles.timelineItem} ${styles.left}`}>
             <div className={styles.content}>
-              <h3 className={styles.timelineTitle}>5. Alta Terapêutica</h3>
+              <h3 className={styles.timelineTitle}>
+                5. Encerramento do processo
+              </h3>
               <p className={styles.timelineText}>
-                Preparação para seguir com autonomia e clareza após alcançar os
-                objetivos.
+                Quando os objetivos terapêuticos forem alcançados, o processo
+                pode ser finalizado de forma gradual, para que você siga com
+                mais autonomia, clareza e segurança.
               </p>
             </div>
             <div className={styles.iconPlaceholder}>
