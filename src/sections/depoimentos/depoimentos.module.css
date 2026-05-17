@@ -1,0 +1,254 @@
+.section {
+  background: #ebded4;
+  padding: 104px 24px;
+  width: 100%;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #2d5a45;
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.title {
+  color: #2d5a45;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2.35rem, 5vw, 3.45rem);
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  color: #555555;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.65;
+}
+
+.slide {
+  background:
+    radial-gradient(circle at top left, rgba(235, 222, 212, 0.18), transparent 34%),
+    linear-gradient(145deg, #2d5a45 0%, #224d38 54%, #173b2a 100%);
+  border: 1px solid rgba(45, 90, 69, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 28px 70px rgba(34, 77, 56, 0.24);
+  display: grid;
+  min-height: 420px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressGroup {
+  display: flex;
+  gap: 10px;
+  left: 28px;
+  pointer-events: none;
+  position: absolute;
+  right: 28px;
+  top: 24px;
+  z-index: 4;
+}
+
+.progressTrack {
+  background: rgba(235, 222, 212, 0.18);
+  border-radius: 999px;
+  display: block;
+  flex: 1;
+  height: 7px;
+  overflow: hidden;
+  padding: 1px;
+}
+
+.progressBar {
+  background: linear-gradient(90deg, #ebded4, #ffffff);
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  transform: translateX(-101%);
+  width: 100%;
+}
+
+.progressBar.active {
+  animation: progressFill linear forwards;
+}
+
+.progressBar.completed {
+  transform: translateX(0);
+}
+
+.progressBar.paused {
+  animation-play-state: paused;
+}
+
+.slideElements {
+  display: grid;
+  grid-area: 1 / 1;
+  min-height: inherit;
+}
+
+.testimonial {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-area: 1 / 1;
+  justify-content: center;
+  opacity: 0;
+  padding: 84px clamp(28px, 8vw, 112px) 76px;
+  text-align: center;
+  transform: translateY(18px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    visibility 0.45s ease;
+  visibility: hidden;
+}
+
+.testimonialActive {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.context {
+  border: 1px solid rgba(235, 222, 212, 0.28);
+  border-radius: 999px;
+  color: #ebded4;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin-bottom: 26px;
+  padding: 10px 16px;
+  text-transform: uppercase;
+}
+
+.quote {
+  color: #ffffff;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(1.75rem, 4.2vw, 3rem);
+  line-height: 1.22;
+  max-width: 850px;
+}
+
+.quote::before,
+.quote::after {
+  color: rgba(235, 222, 212, 0.7);
+}
+
+.quote::before {
+  content: "“";
+}
+
+.quote::after {
+  content: "”";
+}
+
+.signature {
+  color: rgba(235, 222, 212, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+.controls {
+  display: grid;
+  grid-area: 1 / 1;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: 5;
+}
+
+.controlButton {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: rgba(235, 222, 212, 0);
+  cursor: pointer;
+  display: flex;
+  font-size: 2rem;
+  min-height: 100%;
+  padding: 0 26px;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.controlButton:first-child {
+  justify-content: flex-start;
+}
+
+.controlButton:last-child {
+  justify-content: flex-end;
+}
+
+.controlButton:hover,
+.controlButton:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(235, 222, 212, 0.82);
+  outline: none;
+}
+
+@keyframes progressFill {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 82px 20px;
+  }
+
+  .header {
+    margin-bottom: 34px;
+  }
+
+  .slide {
+    min-height: 460px;
+  }
+
+  .progressGroup {
+    gap: 7px;
+    left: 18px;
+    right: 18px;
+    top: 18px;
+  }
+
+  .progressTrack {
+    height: 6px;
+  }
+
+  .testimonial {
+    padding: 74px 24px 70px;
+  }
+
+  .context {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .signature {
+    margin-top: 24px;
+  }
+
+  .controlButton {
+    font-size: 1.65rem;
+    padding: 0 16px;
+  }
+}

@@ -58,7 +58,7 @@ export default function NaMidia() {
           <div className={styles.columnCenter}>
             <div className={styles.imageWrapper}>
               <Image
-                src="/img/ananamidia.png"
+                src="/img/ananamidiaa.png"
                 alt="Ana na Mídia"
                 width={440}
                 height={660}
