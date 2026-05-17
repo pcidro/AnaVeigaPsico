@@ -12,9 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const WHATSAPP_URL = "https://wa.me/5511954886977";
 const CBN_INTERVIEW_URL = "https://www.youtube.com/watch?v=AchH8Gcykj4&t=2s";
+const BUSINESS_SCHOOL_URL = "https://www.youtube.com/watch?v=x7Mz4t1kdaU&t=1s";
 const YOUTUBE_URL = "https://www.youtube.com/@maternandonodiv%C3%A3";
-const SPOTIFY_URL =
-  "https://open.spotify.com/show/3dPE9BeUZcT545joWYYBqE?si=aesBcdNZRyK2tuQFmC6x4w";
 
 export default function NaMidia() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -146,8 +145,9 @@ export default function NaMidia() {
                 <h3 className={styles.cardTitle}>CBN</h3>
               </div>
               <p className={styles.cardDesc}>
-                Entrevista exclusiva na CBN sobre os impactos da ansiedade na
-                rotina moderna e estratégias clínicas de enfrentamento.
+                Uma conversa sobre saúde emocional, ansiedade e os desafios de
+                sustentar a rotina sem deixar de olhar para o que acontece por
+                dentro.
               </p>
               <a
                 href={CBN_INTERVIEW_URL}
@@ -177,11 +177,12 @@ export default function NaMidia() {
                 <h3 className={styles.cardTitle}>Escola dos Negócios</h3>
               </div>
               <p className={styles.cardDesc}>
-                Participação no podcast debatendo sobre a importância da saúde
-                mental no ambiente corporativo e liderança humanizada.
+                No episódio “Os Desafios Reais da Maternidade”, Ana fala sobre
+                psicanálise, acolhimento e as camadas emocionais que atravessam
+                a maternidade possível.
               </p>
               <a
-                href={SPOTIFY_URL}
+                href={BUSINESS_SCHOOL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.cardAction}
@@ -224,8 +225,9 @@ export default function NaMidia() {
               </div>
               <h3 className={styles.cardTitleSpotify}>Maternando no divã</h3>
               <p className={styles.cardDesc}>
-                Adicione doses extras de saúde & acolhimento materno! Siga e
-                ouça o nosso Podcast semanal focado em maternidade real.
+                Um espaço de conversa sobre maternidade real, saúde emocional e
+                os sentimentos que muitas mães vivem, mas nem sempre conseguem
+                dizer em voz alta.
               </p>
               <a
                 href={YOUTUBE_URL}
@@ -250,8 +252,9 @@ export default function NaMidia() {
                 </h3>
               </div>
               <p className={styles.cardDesc}>
-                Leve saúde mental, inteligência emocional e treinamentos
-                comportamentais sob medida para a sua empresa ou evento.
+                Encontros pensados para empresas, eventos e grupos que desejam
+                falar sobre saúde mental, vínculos e cuidado emocional de forma
+                sensível e acessível.
               </p>
               <a
                 href={WHATSAPP_URL}
