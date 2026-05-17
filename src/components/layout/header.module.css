@@ -19,12 +19,6 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.logoLink {
-  align-items: center;
-  display: inline-flex;
-  text-decoration: none;
-}
-
 .logoImg {
   height: 250px;
 }
@@ -113,24 +107,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .siteHeader {
-    height: 76px;
-  }
-
-  .headerContent {
-    padding: 0 1.25rem;
-  }
-
-  .logoLink {
-    height: 56px;
-    min-width: 140px;
-  }
-
-  .logoImg {
-    max-height: 78px;
-    width: 150px;
-  }
-
   .desktopNav,
   .desktopCta {
     display: none;
@@ -139,22 +115,19 @@
   .mobileMenuBtn {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 44px;
-    height: 44px;
-    background: rgba(255, 255, 255, 0.42);
-    border: 1px solid rgba(45, 90, 69, 0.12);
-    border-radius: 999px;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
     cursor: pointer;
-    padding: 0 10px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    padding: 0;
   }
 
   .hamburgerLine {
     width: 100%;
     height: 2px;
-    background-color: var(--color-cta, #2d5a45);
+    background-color: var(--text-nav, #1c1c1e);
     border-radius: 999px;
     transition: opacity 0.2s ease;
   }
@@ -170,7 +143,7 @@
     transition:
       opacity var(--transition-speed, 0.3s) ease,
       visibility var(--transition-speed, 0.3s) ease;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(4px);
   }
 
   .drawerOverlay.active {
@@ -186,14 +159,12 @@
     right: 0;
     width: min(82vw, 330px);
     height: 100vh;
-    background:
-      radial-gradient(circle at top right, rgba(255, 255, 255, 0.44), transparent 34%),
-      #ebded4;
+    background-color: var(--bg-header, #ebded4);
     z-index: 1002;
     padding: 1.8rem 1.8rem 1.7rem;
     transform: translateX(100%);
     transition: transform var(--transition-speed, 0.3s) ease;
-    box-shadow: -18px 0 50px rgba(31, 64, 49, 0.18);
+    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.12);
   }
 
   .mobileDrawer.active {
@@ -217,7 +188,7 @@
   }
 
   .drawerLogoImg {
-    width: 166px;
+    width: 172px;
     height: auto;
     object-fit: contain;
     display: block;
@@ -228,8 +199,8 @@
     position: relative;
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.44);
-    border: 1px solid rgba(45, 90, 69, 0.12);
+    background: rgba(0, 0, 0, 0.045);
+    border: none;
     border-radius: 999px;
     cursor: pointer;
     flex-shrink: 0;
@@ -242,7 +213,7 @@
   }
 
   .closeDrawerBtn:hover {
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(0, 0, 0, 0.08);
     transform: scale(1.03);
   }
 
@@ -250,7 +221,7 @@
     position: absolute;
     width: 16px;
     height: 1.75px;
-    background-color: var(--color-cta, #2d5a45);
+    background-color: var(--text-nav, #1c1c1e);
     border-radius: 999px;
   }
 
@@ -268,7 +239,7 @@
     background: linear-gradient(
       to right,
       transparent,
-      rgba(45, 90, 69, 0.16),
+      rgba(0, 0, 0, 0.08),
       transparent
     );
     margin-bottom: 1.25rem;
@@ -299,7 +270,7 @@
     letter-spacing: 0.012em;
     line-height: 1.25;
     padding: 0.9rem 0;
-    border-bottom: 1px solid rgba(45, 90, 69, 0.09);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition:
       color var(--transition-speed, 0.3s) ease,
       padding-left var(--transition-speed, 0.3s) ease,
@@ -325,15 +296,13 @@
     text-align: center;
     text-decoration: none;
     padding: 1.05rem 1.25rem;
-    border-radius: 999px;
+    border-radius: 16px;
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    background:
-      linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent),
-      var(--color-cta, #2d5a45);
-    color: #f8f3ef;
+    background: var(--color-cta, #2d5a45);
+    color: #fff;
     box-shadow:
       0 10px 24px rgba(45, 90, 69, 0.18),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
