@@ -47,7 +47,7 @@ export default function Hero() {
 
           <Link href="#agendamento" id="btn-agendar" className={styles.heroCta}>
             Agendar minha consulta
-            <FaWhatsapp size={30} />
+            <FaWhatsapp className={styles.ctaIcon} />
           </Link>
         </div>
       </section>

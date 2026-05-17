@@ -25,7 +25,7 @@ export default function Header() {
     <>
       <header className={styles.siteHeader}>
         <div className={styles.headerContent}>
-          <Link href="#">
+          <Link href="#" className={styles.logoLink}>
             <Image
               src="/img/logo.png"
               height={250}
@@ -44,12 +44,17 @@ export default function Header() {
               </li>
               <li>
                 <Link href="#sobre" className={styles.navLink}>
-                  Sobre
+                  Sobre mim
                 </Link>
               </li>
               <li>
                 <Link href="#depoimentos" className={styles.navLink}>
                   Depoimentos
+                </Link>
+              </li>
+              <li>
+                <Link href="#blog" className={styles.navLink}>
+                  Blog
                 </Link>
               </li>
             </ul>
@@ -125,7 +130,7 @@ export default function Header() {
                 className={styles.mobileNavLink}
                 onClick={closeMenu}
               >
-                Sobre
+                Sobre mim
               </Link>
             </li>
             <li>
@@ -135,6 +140,15 @@ export default function Header() {
                 onClick={closeMenu}
               >
                 Depoimentos
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#blog"
+                className={styles.mobileNavLink}
+                onClick={closeMenu}
+              >
+                Blog
               </Link>
             </li>
           </ul>

@@ -38,7 +38,18 @@
 }
 
 .heroOverlay {
-  display: none;
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(26, 51, 39, 0.82) 0%,
+    rgba(36, 70, 54, 0.56) 34%,
+    rgba(36, 70, 54, 0.18) 58%,
+    rgba(36, 70, 54, 0) 78%
+  );
+  pointer-events: none;
 }
 
 .heroContent {
@@ -52,14 +63,21 @@
 }
 
 .heroLabel {
-  font-size: 0.85rem;
-  font-weight: 600;
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 750;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--color-secondary);
-  opacity: 0.9;
+  letter-spacing: 1.7px;
+  color: #ffffff;
+  line-height: 1.4;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(235, 222, 212, 0.16);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(235, 222, 212, 0.22);
   margin-bottom: 1.5rem;
   font-family: var(--font-inter);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
 }
 
 .heroTitle {
@@ -82,23 +100,31 @@
 .heroCta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   justify-content: center;
   background-color: var(--color-secondary);
   color: var(--color-primary);
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.125rem;
-  padding: 2rem 4.5rem;
+  font-weight: 750;
+  font-size: 1rem;
+  padding: 1rem 1.65rem;
   border-radius: 50px;
   font-family: var(--font-inter);
-  transition: all 0.3s ease;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 .heroCta:hover {
   background-color: #d1c1b3;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
   transform: translateY(-2px);
+}
+
+.ctaIcon {
+  font-size: 1.35rem;
 }
 
 /* =========================================
@@ -148,7 +174,6 @@
   }
 
   .heroOverlay {
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -221,6 +246,12 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
+  }
+
+  .heroMicrocopy {
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.86rem;
+    margin-top: 0.85rem;
   }
 }
 
