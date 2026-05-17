@@ -3,6 +3,8 @@ import Link from "next/link";
 import styles from "./hero.module.css";
 import { FaWhatsapp } from "react-icons/fa";
 
+const WHATSAPP_URL = "https://wa.me/5511954886977";
+
 export default function Hero() {
   return (
     <>
@@ -45,7 +47,13 @@ export default function Hero() {
             seu tempo e ajudar você a reencontrar a sua própria voz.
           </p>
 
-          <Link href="#agendamento" id="btn-agendar" className={styles.heroCta}>
+          <Link
+            href={WHATSAPP_URL}
+            id="btn-agendar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.heroCta}
+          >
             Agendar minha consulta
             <FaWhatsapp className={styles.ctaIcon} />
           </Link>

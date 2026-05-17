@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import type { MouseEvent } from "react";
 import { FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa";
 import styles from "./footer.module.css";
 
@@ -9,27 +12,41 @@ const navigationLinks = [
   { label: "Depoimentos", href: "#depoimentos" },
   { label: "Na mídia", href: "#na-midia" },
   { label: "Blog", href: "#blog" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 const socialLinks = [
   {
     label: "Instagram",
-    href: "https://www.instagram.com/",
+    href: "https://www.instagram.com/anapsiveiga/",
     icon: FaInstagram,
   },
   {
     label: "YouTube",
-    href: "https://www.youtube.com/",
+    href: "https://www.youtube.com/@maternandonodiv%C3%A3",
     icon: FaYoutube,
   },
   {
     label: "Podcast",
-    href: "https://open.spotify.com/",
+    href: "https://open.spotify.com/show/3dPE9BeUZcT545joWYYBqE?si=aesBcdNZRyK2tuQFmC6x4w",
     icon: FaSpotify,
   },
 ];
 
 export default function Footer() {
+  const scrollToSection = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (!href.startsWith("#")) return;
+
+    event.preventDefault();
+
+    document.querySelector(href)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className={`${styles.footer} animeLeft`}>
       <div className={styles.container}>
@@ -54,7 +71,11 @@ export default function Footer() {
             <ul className={styles.navList}>
               {navigationLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className={styles.navLink}>
+                  <Link
+                    href={link.href}
+                    className={styles.navLink}
+                    onClick={(event) => scrollToSection(event, link.href)}
+                  >
                     {link.label}
                   </Link>
                 </li>

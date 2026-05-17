@@ -1,16 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.css";
 import { FaWhatsapp } from "react-icons/fa";
+
+const WHATSAPP_URL = "https://wa.me/5511954886977";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
+  const scrollToSection = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (!href.startsWith("#")) return;
+
+    event.preventDefault();
+
+    const section = document.querySelector(href);
+
+    section?.scrollIntoView({
+      behavior: "smooth",
+    });
+
+    closeMenu();
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -38,30 +56,57 @@ export default function Header() {
           <nav className={styles.desktopNav} aria-label="Navegação Principal">
             <ul className={styles.navList}>
               <li>
-                <Link href="#inicio" className={styles.navLink}>
+                <Link
+                  href="#inicio"
+                  className={styles.navLink}
+                  onClick={(event) => scrollToSection(event, "#inicio")}
+                >
                   Início
                 </Link>
               </li>
               <li>
-                <Link href="#sobre" className={styles.navLink}>
+                <Link
+                  href="#sobre"
+                  className={styles.navLink}
+                  onClick={(event) => scrollToSection(event, "#sobre")}
+                >
                   Sobre mim
                 </Link>
               </li>
               <li>
-                <Link href="#depoimentos" className={styles.navLink}>
+                <Link
+                  href="#depoimentos"
+                  className={styles.navLink}
+                  onClick={(event) => scrollToSection(event, "#depoimentos")}
+                >
                   Depoimentos
                 </Link>
               </li>
               <li>
-                <Link href="#blog" className={styles.navLink}>
+                <Link
+                  href="#blog"
+                  className={styles.navLink}
+                  onClick={(event) => scrollToSection(event, "#blog")}
+                >
                   Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#faq"
+                  className={styles.navLink}
+                  onClick={(event) => scrollToSection(event, "#faq")}
+                >
+                  FAQ
                 </Link>
               </li>
             </ul>
           </nav>
 
           <Link
-            href="#agendar"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`${styles.btnCta} ${styles.desktopCta}`}
           >
             Agende uma Sessão
@@ -119,7 +164,7 @@ export default function Header() {
               <Link
                 href="#inicio"
                 className={styles.mobileNavLink}
-                onClick={closeMenu}
+                onClick={(event) => scrollToSection(event, "#inicio")}
               >
                 Início
               </Link>
@@ -128,7 +173,7 @@ export default function Header() {
               <Link
                 href="#sobre"
                 className={styles.mobileNavLink}
-                onClick={closeMenu}
+                onClick={(event) => scrollToSection(event, "#sobre")}
               >
                 Sobre mim
               </Link>
@@ -137,7 +182,7 @@ export default function Header() {
               <Link
                 href="#depoimentos"
                 className={styles.mobileNavLink}
-                onClick={closeMenu}
+                onClick={(event) => scrollToSection(event, "#depoimentos")}
               >
                 Depoimentos
               </Link>
@@ -146,9 +191,18 @@ export default function Header() {
               <Link
                 href="#blog"
                 className={styles.mobileNavLink}
-                onClick={closeMenu}
+                onClick={(event) => scrollToSection(event, "#blog")}
               >
                 Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#faq"
+                className={styles.mobileNavLink}
+                onClick={(event) => scrollToSection(event, "#faq")}
+              >
+                FAQ
               </Link>
             </li>
           </ul>
@@ -156,7 +210,9 @@ export default function Header() {
 
         <div className={styles.drawerFooter}>
           <Link
-            href="#agendar"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`${styles.mobileCta}`}
             onClick={closeMenu}
           >

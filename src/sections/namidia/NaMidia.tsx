@@ -10,6 +10,12 @@ import { FaMicrophone } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const WHATSAPP_URL = "https://wa.me/5511954886977";
+const CBN_INTERVIEW_URL = "https://www.youtube.com/watch?v=AchH8Gcykj4&t=2s";
+const YOUTUBE_URL = "https://www.youtube.com/@maternandonodiv%C3%A3";
+const SPOTIFY_URL =
+  "https://open.spotify.com/show/3dPE9BeUZcT545joWYYBqE?si=aesBcdNZRyK2tuQFmC6x4w";
+
 export default function NaMidia() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const cardsRef = useRef<HTMLElement[]>([]);
@@ -143,7 +149,12 @@ export default function NaMidia() {
                 Entrevista exclusiva na CBN sobre os impactos da ansiedade na
                 rotina moderna e estratégias clínicas de enfrentamento.
               </p>
-              <a href="#link-entrevista" className={styles.cardAction}>
+              <a
+                href={CBN_INTERVIEW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.cardAction}
+              >
                 <span>Acessar entrevista completa</span>
                 <FiArrowRight className={styles.arrowIcon} />
               </a>
@@ -169,7 +180,12 @@ export default function NaMidia() {
                 Participação no podcast debatendo sobre a importância da saúde
                 mental no ambiente corporativo e liderança humanizada.
               </p>
-              <a href="#link-episodio" className={styles.cardAction}>
+              <a
+                href={SPOTIFY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.cardAction}
+              >
                 <span>Acessar episódio</span>
                 <FiArrowRight className={styles.arrowIcon} />
               </a>
@@ -211,7 +227,12 @@ export default function NaMidia() {
                 Adicione doses extras de saúde & acolhimento materno! Siga e
                 ouça o nosso Podcast semanal focado em maternidade real.
               </p>
-              <a href="#link-podcast" className={styles.cardAction}>
+              <a
+                href={YOUTUBE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.cardAction}
+              >
                 <span>Acessar podcast</span>
                 <FiArrowRight className={styles.arrowIcon} />
               </a>
@@ -233,7 +254,7 @@ export default function NaMidia() {
                 comportamentais sob medida para a sua empresa ou evento.
               </p>
               <a
-                href="https://wa.me/"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.cardAction}

@@ -2,6 +2,8 @@ import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import styles from "./sobremim.module.css";
 
+const WHATSAPP_URL = "https://wa.me/5511954886977";
+
 export default function SobreMim() {
   return (
     <section className={`${styles.section}`} id="sobre">
@@ -84,7 +86,7 @@ export default function SobreMim() {
 
           <div className={styles.actions}>
             <a
-              href="https://wa.me/"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.whatsappCta}
