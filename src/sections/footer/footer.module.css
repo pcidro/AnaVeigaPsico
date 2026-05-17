@@ -1,0 +1,171 @@
+.footer {
+  background: #2d5a45;
+  color: #ebded4;
+  font-family: var(--font-inter), sans-serif;
+  padding: 72px 24px 28px;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.grid {
+  align-items: start;
+  display: grid;
+  gap: 48px;
+  grid-template-columns: minmax(260px, 1.25fr) minmax(180px, 0.8fr) minmax(
+      220px,
+      0.8fr
+    );
+}
+
+.brandColumn,
+.navColumn,
+.socialColumn {
+  min-width: 0;
+}
+
+.logoLink {
+  display: inline-flex;
+  margin-bottom: 18px;
+  text-decoration: none;
+}
+
+.logo {
+  height: auto;
+  max-width: 250px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.subtitle {
+  color: #f5eee8;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(1.45rem, 3vw, 1rem);
+  line-height: 1.18;
+  max-width: 380px;
+}
+
+.columnTitle {
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.navList,
+.socialList {
+  display: grid;
+  gap: 12px;
+}
+
+.navLink,
+.socialLink {
+  color: rgba(235, 222, 212, 0.86);
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navLink {
+  display: inline-flex;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.socialLink {
+  align-items: center;
+  display: inline-flex;
+  font-size: 1rem;
+  gap: 10px;
+  line-height: 1.35;
+}
+
+.socialLink svg {
+  flex: 0 0 auto;
+  font-size: 1.28rem;
+}
+
+.navLink:hover,
+.navLink:focus-visible,
+.socialLink:hover,
+.socialLink:focus-visible {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.navLink:focus-visible,
+.socialLink:focus-visible,
+.logoLink:focus-visible {
+  border-radius: 8px;
+  outline: 3px solid rgba(235, 222, 212, 0.42);
+  outline-offset: 5px;
+}
+
+.copy {
+  border-top: 1px solid rgba(235, 222, 212, 0.22);
+  color: rgba(235, 222, 212, 0.74);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 56px;
+  padding-top: 24px;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    gap: 38px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brandColumn {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 58px 20px 24px;
+  }
+
+  .grid {
+    gap: 34px;
+    grid-template-columns: 1fr;
+  }
+
+  .brandColumn,
+  .navColumn,
+  .socialColumn {
+    text-align: center;
+  }
+
+  .logoLink,
+  .navLink,
+  .socialLink {
+    justify-content: center;
+  }
+
+  .logo {
+    max-width: 210px;
+  }
+
+  .subtitle {
+    margin: 0 auto;
+    max-width: 310px;
+  }
+
+  .navList,
+  .socialList {
+    gap: 14px;
+  }
+
+  .copy {
+    font-size: 0.84rem;
+    margin-top: 42px;
+  }
+}

@@ -84,7 +84,7 @@ export default function Depoimentos() {
   }, [stopPause]);
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="depoimentos">
       <div className={styles.container}>
         <header className={styles.header}>
           <span className={styles.eyebrow}>Depoimentos</span>

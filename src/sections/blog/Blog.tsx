@@ -32,7 +32,7 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="blog">
       <div className={styles.container}>
         <header className={styles.header}>
           <span className={styles.eyebrow}>Leituras & cuidado</span>

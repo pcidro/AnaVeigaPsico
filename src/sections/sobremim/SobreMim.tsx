@@ -4,7 +4,7 @@ import styles from "./sobremim.module.css";
 
 export default function SobreMim() {
   return (
-    <section className={styles.section} id="sobre-mim">
+    <section className={styles.section} id="sobre">
       <div className={styles.container}>
         <div className={styles.media}>
           <div className={styles.badge}>

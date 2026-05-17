@@ -5,7 +5,7 @@ import { FaMicrophone } from "react-icons/fa";
 
 export default function NaMidia() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="na-midia">
       <div className={styles.container}>
         <header className={styles.header}>
           <span className={styles.eyebrow}>Presença & Voz</span>
