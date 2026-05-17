@@ -6,8 +6,12 @@ import Depoimentos from "@/sections/depoimentos/Depoimentos";
 import NaMidia from "@/sections/namidia/NaMidia";
 import FAQ from "@/sections/faq/FAQ";
 import Footer from "@/sections/footer/Footer";
+import { getDataHome } from "@/actions/getdata";
+import { PostsResponse } from "@/types/postType";
 
 export default async function HomePage() {
+  const { objects }: PostsResponse = await getDataHome();
+
   return (
     <div>
       <Hero />
@@ -15,7 +19,7 @@ export default async function HomePage() {
       <SobreMim />
       <Depoimentos />
       <NaMidia />
-      <Blog />
+      <Blog posts={objects} />
       <FAQ />
       <Footer />
     </div>
