@@ -143,6 +143,10 @@ export default function NaMidia() {
                 Entrevista exclusiva na CBN sobre os impactos da ansiedade na
                 rotina moderna e estratégias clínicas de enfrentamento.
               </p>
+              <a href="#link-entrevista" className={styles.cardAction}>
+                <span>Acessar entrevista completa</span>
+                <FiArrowRight className={styles.arrowIcon} />
+              </a>
             </article>
 
             <article
@@ -165,6 +169,10 @@ export default function NaMidia() {
                 Participação no podcast debatendo sobre a importância da saúde
                 mental no ambiente corporativo e liderança humanizada.
               </p>
+              <a href="#link-episodio" className={styles.cardAction}>
+                <span>Acessar episódio</span>
+                <FiArrowRight className={styles.arrowIcon} />
+              </a>
             </article>
           </div>
 

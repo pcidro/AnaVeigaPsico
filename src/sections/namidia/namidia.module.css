@@ -429,16 +429,45 @@
   }
 
   .grid {
-    gap: 28px;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 2px;
+    padding: 2px 2px 16px;
+    margin-inline: -2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
   }
 
   .columnCenter {
     display: none;
   }
 
+  .columnEdge:first-of-type,
+  .columnEdge:last-of-type {
+    display: contents;
+  }
+
+  .columnEdge:last-of-type .card {
+    order: 1;
+  }
+
+  .columnEdge:first-of-type .card {
+    order: 2;
+  }
+
   .card {
+    flex: 0 0 min(84vw, 335px);
     padding: 24px 22px;
     border-radius: 20px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .cardTitle,
