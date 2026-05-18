@@ -17,11 +17,21 @@ export default function Header() {
     event: MouseEvent<HTMLAnchorElement>,
     href: string,
   ) => {
-    if (!href.startsWith("#")) return;
+    const hash = href.includes("#") ? href.slice(href.indexOf("#")) : "";
+
+    if (!hash) {
+      closeMenu();
+      return;
+    }
+
+    if (window.location.pathname !== "/") {
+      closeMenu();
+      return;
+    }
 
     event.preventDefault();
 
-    const section = document.querySelector(href);
+    const section = document.querySelector(hash);
 
     section?.scrollIntoView({
       behavior: "smooth",
@@ -43,7 +53,7 @@ export default function Header() {
     <>
       <header className={styles.siteHeader}>
         <div className={styles.headerContent}>
-          <Link href="#" className={styles.logoLink}>
+          <Link href="/" className={styles.logoLink}>
             <Image
               src="/img/logo.png"
               height={250}
@@ -57,45 +67,45 @@ export default function Header() {
             <ul className={styles.navList}>
               <li>
                 <Link
-                  href="#inicio"
+                  href="/#inicio"
                   className={styles.navLink}
-                  onClick={(event) => scrollToSection(event, "#inicio")}
+                  onClick={(event) => scrollToSection(event, "/#inicio")}
                 >
                   Início
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#sobre"
+                  href="/#sobre"
                   className={styles.navLink}
-                  onClick={(event) => scrollToSection(event, "#sobre")}
+                  onClick={(event) => scrollToSection(event, "/#sobre")}
                 >
                   Sobre mim
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#depoimentos"
+                  href="/#depoimentos"
                   className={styles.navLink}
-                  onClick={(event) => scrollToSection(event, "#depoimentos")}
+                  onClick={(event) => scrollToSection(event, "/#depoimentos")}
                 >
                   Depoimentos
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#blog"
+                  href="/#blog"
                   className={styles.navLink}
-                  onClick={(event) => scrollToSection(event, "#blog")}
+                  onClick={(event) => scrollToSection(event, "/#blog")}
                 >
                   Blog
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#faq"
+                  href="/#faq"
                   className={styles.navLink}
-                  onClick={(event) => scrollToSection(event, "#faq")}
+                  onClick={(event) => scrollToSection(event, "/#faq")}
                 >
                   FAQ
                 </Link>
@@ -137,7 +147,7 @@ export default function Header() {
         aria-hidden={!isOpen}
       >
         <div className={styles.drawerTop}>
-          <Link href="#" className={styles.drawerLogo} onClick={closeMenu}>
+          <Link href="/" className={styles.drawerLogo} onClick={closeMenu}>
             <Image
               src="/img/logo.png"
               height={250}
@@ -162,45 +172,45 @@ export default function Header() {
           <ul className={styles.mobileNavList}>
             <li>
               <Link
-                href="#inicio"
+                href="/#inicio"
                 className={styles.mobileNavLink}
-                onClick={(event) => scrollToSection(event, "#inicio")}
+                onClick={(event) => scrollToSection(event, "/#inicio")}
               >
                 Início
               </Link>
             </li>
             <li>
               <Link
-                href="#sobre"
+                href="/#sobre"
                 className={styles.mobileNavLink}
-                onClick={(event) => scrollToSection(event, "#sobre")}
+                onClick={(event) => scrollToSection(event, "/#sobre")}
               >
                 Sobre mim
               </Link>
             </li>
             <li>
               <Link
-                href="#depoimentos"
+                href="/#depoimentos"
                 className={styles.mobileNavLink}
-                onClick={(event) => scrollToSection(event, "#depoimentos")}
+                onClick={(event) => scrollToSection(event, "/#depoimentos")}
               >
                 Depoimentos
               </Link>
             </li>
             <li>
               <Link
-                href="#blog"
+                href="/#blog"
                 className={styles.mobileNavLink}
-                onClick={(event) => scrollToSection(event, "#blog")}
+                onClick={(event) => scrollToSection(event, "/#blog")}
               >
                 Blog
               </Link>
             </li>
             <li>
               <Link
-                href="#faq"
+                href="/#faq"
                 className={styles.mobileNavLink}
-                onClick={(event) => scrollToSection(event, "#faq")}
+                onClick={(event) => scrollToSection(event, "/#faq")}
               >
                 FAQ
               </Link>

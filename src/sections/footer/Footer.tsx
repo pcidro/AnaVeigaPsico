@@ -7,12 +7,12 @@ import { FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa";
 import styles from "./footer.module.css";
 
 const navigationLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre mim", href: "#sobre" },
-  { label: "Depoimentos", href: "#depoimentos" },
-  { label: "Na mídia", href: "#na-midia" },
-  { label: "Blog", href: "#blog" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Início", href: "/#inicio" },
+  { label: "Sobre mim", href: "/#sobre" },
+  { label: "Depoimentos", href: "/#depoimentos" },
+  { label: "Na mídia", href: "/#na-midia" },
+  { label: "Blog", href: "/#blog" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const socialLinks = [
@@ -38,11 +38,13 @@ export default function Footer() {
     event: MouseEvent<HTMLAnchorElement>,
     href: string,
   ) => {
-    if (!href.startsWith("#")) return;
+    const hash = href.includes("#") ? href.slice(href.indexOf("#")) : "";
+
+    if (!hash || window.location.pathname !== "/") return;
 
     event.preventDefault();
 
-    document.querySelector(href)?.scrollIntoView({
+    document.querySelector(hash)?.scrollIntoView({
       behavior: "smooth",
     });
   };
@@ -52,7 +54,7 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.brandColumn}>
-            <Link href="#inicio" className={styles.logoLink}>
+            <Link href="/" className={styles.logoLink}>
               <Image
                 src="/img/logofooter.png"
                 alt="Ana Veiga Psicanalista"
