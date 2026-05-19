@@ -43,42 +43,51 @@ export default function SobreMim() {
 
           <div className={styles.text}>
             <p>
-              Sou Ana Paula Veiga,{" "}
+              Sou Ana Veiga, cristã, esposa, mãe do Benjamim e 👼🏽👼🏽,{" "}
               <strong className={styles.highlight}>
-                psicanalista formada em Recursos Humanos
-              </strong>{" "}
-              e apaixonada pelo desenvolvimento humano e pela{" "}
-              <strong className={styles.highlight}>saúde mental</strong>. Após
-              anos atuando com pessoas, decidi seguir meu antigo sonho de
-              trabalhar na clínica e me dedicar integralmente à psicanálise.
-            </p>
-
-            <p>
-              Minha trajetória inclui{" "}
-              <strong className={styles.highlight}>
-                atuação voluntária em uma ONG de apoio a mulheres em situação de
-                violência
+                psicanalista e terapeuta familiar
               </strong>
-              , experiência que marcou profundamente minha prática. Hoje, tenho
-              um olhar especial para a{" "}
+              , com atuação voltada à{" "}
               <strong className={styles.highlight}>
-                saúde mental feminina
-              </strong>
-              , com foco em{" "}
-              <strong className={styles.highlight}>
-                gestação, maternidade e puerpério
+                saúde mental feminina e materna
               </strong>
               .
             </p>
 
             <p>
-              Meu propósito é oferecer um{" "}
+              Atendo mulheres, gestantes e mães que enfrentam ansiedade,
+              sobrecarga emocional, conflitos nos relacionamentos, desafios da
+              maternidade e processos de autoconhecimento.
+            </p>
+
+            <p>
+              Graduada em Recursos Humanos e apaixonada pelo desenvolvimento
+              humano, após anos trabalhando diretamente com pessoas, fiz uma
+              transição de carreira para seguir meu antigo sonho de atuar na
+              clínica e me dedicar integralmente à psicanálise.
+            </p>
+
+            <p>
+              Minha vivência com a maternidade, incluindo a experiência da perda
+              gestacional, também atravessa minha escuta clínica, tornando meu
+              olhar ainda mais sensível para as dores emocionais femininas, os
+              processos de luto e os desafios silenciosos que muitas mulheres
+              enfrentam.
+            </p>
+
+            <p>
+              Hoje, meu trabalho tem um olhar especial para{" "}
               <strong className={styles.highlight}>
-                espaço acolhedor e seguro
+                a gestação, o puerpério, a maternidade e a saúde emocional da
+                mulher
+              </strong>
+              , oferecendo um{" "}
+              <strong className={styles.highlight}>
+                espaço seguro, acolhedor e sem julgamentos
               </strong>{" "}
               para promover{" "}
               <strong className={styles.highlight}>
-                autoconhecimento, escuta e transformação emocional
+                escuta, elaboração emocional e transformação
               </strong>
               .
             </p>

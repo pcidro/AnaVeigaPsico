@@ -1,5 +1,6 @@
 import Hero from "@/sections/hero/Hero";
 import HowICanHelp from "@/sections/howicanhelp/Howicanhelp";
+import AreasAtendimento from "@/sections/areasatendimento/AreasAtendimento";
 import SobreMim from "@/sections/sobremim/SobreMim";
 import Blog from "@/sections/blog/Blog";
 import Depoimentos from "@/sections/depoimentos/Depoimentos";
@@ -16,6 +17,7 @@ export default async function HomePage() {
     <div>
       <Hero />
       <HowICanHelp />
+      <AreasAtendimento />
       <SobreMim />
       <Depoimentos />
       <NaMidia />

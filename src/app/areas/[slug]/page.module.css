@@ -1,0 +1,471 @@
+.page {
+  background: linear-gradient(180deg, #f5f1ec 0%, #ffffff 42%, #f5f1ec 100%);
+  color: #264f3d;
+  font-family: var(--font-inter), sans-serif;
+  min-height: 100vh;
+}
+
+.hero {
+  align-items: center;
+  display: flex;
+  height: min(64vh, 620px);
+  justify-content: center;
+  margin-top: 80px;
+  min-height: 440px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.overlay {
+  background:
+    linear-gradient(180deg, rgba(16, 35, 26, 0.18), rgba(16, 35, 26, 0.74)),
+    rgba(16, 35, 26, 0.18);
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.heroContent {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  background: rgba(235, 222, 212, 0.16);
+  border: 1px solid rgba(235, 222, 212, 0.28);
+  border-radius: 999px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  margin-bottom: 18px;
+  padding: 0.62rem 1rem;
+  text-transform: uppercase;
+}
+
+.title {
+  color: #ffffff;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2.75rem, 7vw, 5.25rem);
+  line-height: 1.02;
+  text-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+}
+
+.heroSubtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.65;
+  margin: 20px auto 0;
+  max-width: 760px;
+  text-shadow: 0 12px 32px rgba(0, 0, 0, 0.34);
+}
+
+.body {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 54px 24px 104px;
+}
+
+.backLink {
+  align-items: center;
+  color: #2d5a45;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 750;
+  gap: 8px;
+  letter-spacing: 0.08em;
+  margin-bottom: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.backLink svg {
+  font-size: 1.08rem;
+}
+
+.backLink:hover,
+.backLink:focus-visible {
+  color: #1f4031;
+  transform: translateX(-4px);
+}
+
+.backLink:focus-visible {
+  border-radius: 8px;
+  outline: 3px solid rgba(45, 90, 69, 0.28);
+  outline-offset: 5px;
+}
+
+.description {
+  color: #3f3f3f;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.35;
+  margin: 0 0 46px;
+  max-width: 900px;
+}
+
+.contentGrid {
+  align-items: start;
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.45fr);
+}
+
+.mainText {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(45, 90, 69, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 18px 46px rgba(45, 90, 69, 0.08);
+  color: #444444;
+  font-size: 1.06rem;
+  line-height: 1.82;
+  padding: clamp(28px, 5vw, 52px);
+}
+
+.mainText p + p {
+  margin-top: 1.3em;
+}
+
+.mainText strong {
+  color: #2d5a45;
+  font-weight: 800;
+}
+
+.signs {
+  background: #2d5a45;
+  border-radius: 8px;
+  box-shadow: 0 20px 46px rgba(45, 90, 69, 0.18);
+  color: #ffffff;
+  padding: 30px;
+  position: sticky;
+  top: 112px;
+}
+
+.signsEyebrow {
+  color: rgba(235, 222, 212, 0.88);
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.signsTitle {
+  color: #ffffff;
+  font-family: var(--font-playfair), serif;
+  font-size: 2rem;
+  line-height: 1.12;
+  margin-bottom: 22px;
+}
+
+.signsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signsList li {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  line-height: 1.55;
+}
+
+.checkIcon {
+  background: rgba(235, 222, 212, 0.18);
+  border-radius: 999px;
+  color: #ebded4;
+  flex: 0 0 auto;
+  font-size: 1.55rem;
+  margin-top: 1px;
+  padding: 4px;
+}
+
+.cta {
+  align-items: center;
+  background: #ebded4;
+  border: 1px solid rgba(45, 90, 69, 0.12);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 46px;
+  padding: clamp(32px, 5vw, 54px);
+  text-align: center;
+}
+
+.ctaTitle {
+  color: #2d5a45;
+  font-family: var(--font-playfair), serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  margin-bottom: 14px;
+}
+
+.ctaText {
+  color: #4f4f4f;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-bottom: 28px;
+  max-width: 620px;
+}
+
+.ctaButton {
+  align-items: center;
+  background: #2d5a45;
+  border-radius: 999px;
+  color: #ebded4;
+  display: inline-flex;
+  font-size: 0.92rem;
+  font-weight: 800;
+  gap: 10px;
+  justify-content: center;
+  letter-spacing: 0.08em;
+  min-height: 52px;
+  padding: 16px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.ctaButton svg {
+  font-size: 1.22rem;
+}
+
+.ctaButton:hover,
+.ctaButton:focus-visible {
+  background: #224d38;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.ctaButton:focus-visible {
+  outline: 3px solid rgba(45, 90, 69, 0.3);
+  outline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+  .contentGrid {
+    gap: 28px;
+    grid-template-columns: 1fr;
+  }
+
+  .signs {
+    padding: 24px 22px;
+    position: static;
+  }
+
+  .signsTitle {
+    font-size: 1.7rem;
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    height: 300px;
+    min-height: 300px;
+    margin-top: 72px;
+  }
+
+  .heroContent {
+    max-width: 420px;
+    padding: 0 18px;
+  }
+
+  .heroImage {
+    object-position: center top;
+  }
+
+  .eyebrow {
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 12px;
+    padding: 0.5rem 0.85rem;
+  }
+
+  .title {
+    font-size: clamp(1.9rem, 10vw, 2.8rem);
+    line-height: 1.06;
+  }
+
+  .heroSubtitle {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-top: 12px;
+    max-width: 340px;
+  }
+
+  .body {
+    max-width: 760px;
+    padding: 34px 16px 72px;
+  }
+
+  .backLink {
+    font-size: 0.72rem;
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+
+  .description {
+    font-size: 1.18rem;
+    line-height: 1.45;
+    margin-bottom: 26px;
+  }
+
+  .contentGrid {
+    gap: 22px;
+  }
+
+  .mainText {
+    box-shadow: 0 12px 28px rgba(45, 90, 69, 0.08);
+    font-size: 0.94rem;
+    line-height: 1.68;
+    padding: 20px 18px;
+  }
+
+  .signs {
+    box-shadow: 0 14px 30px rgba(45, 90, 69, 0.14);
+    padding: 20px 18px;
+  }
+
+  .signsEyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+  }
+
+  .signsTitle {
+    font-size: 1.42rem;
+    margin-bottom: 16px;
+  }
+
+  .signsList {
+    gap: 12px;
+  }
+
+  .signsList li {
+    font-size: 0.9rem;
+    gap: 10px;
+    line-height: 1.45;
+  }
+
+  .checkIcon {
+    font-size: 1.25rem;
+    padding: 3px;
+  }
+
+  .cta {
+    align-items: stretch;
+    margin-top: 28px;
+    padding: 24px 18px;
+  }
+
+  .ctaTitle {
+    font-size: 1.6rem;
+    line-height: 1.12;
+    margin-bottom: 10px;
+  }
+
+  .ctaText {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
+  .ctaButton {
+    border-radius: 8px;
+    font-size: 0.76rem;
+    gap: 8px;
+    min-height: 44px;
+    padding: 12px 16px;
+    width: 100%;
+  }
+
+  .ctaButton svg {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero {
+    height: 270px;
+    min-height: 270px;
+  }
+
+  .heroContent {
+    max-width: 360px;
+    padding: 0 14px;
+  }
+
+  .title {
+    font-size: clamp(1.7rem, 9vw, 2.3rem);
+  }
+
+  .heroSubtitle {
+    font-size: 0.88rem;
+    max-width: 300px;
+  }
+
+  .body {
+    padding: 30px 14px 64px;
+  }
+
+  .description {
+    font-size: 1.08rem;
+    margin-bottom: 22px;
+  }
+
+  .mainText {
+    font-size: 0.9rem;
+    line-height: 1.62;
+    padding: 18px 16px;
+  }
+
+  .signs {
+    padding: 18px 16px;
+  }
+
+  .signsTitle {
+    font-size: 1.28rem;
+  }
+
+  .signsList li {
+    font-size: 0.86rem;
+  }
+
+  .cta {
+    padding: 20px 16px;
+  }
+
+  .ctaTitle {
+    font-size: 1.42rem;
+  }
+
+  .ctaText {
+    font-size: 0.88rem;
+    margin-bottom: 18px;
+  }
+
+  .ctaButton {
+    font-size: 0.72rem;
+    min-height: 42px;
+    padding: 11px 14px;
+  }
+}

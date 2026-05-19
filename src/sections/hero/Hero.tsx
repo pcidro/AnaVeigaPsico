@@ -35,7 +35,7 @@ export default function Hero() {
 
         <div className={styles.heroContent}>
           <span className={styles.heroLabel}>
-            Psicanalista • especializada em mães e mulheres
+            Psicanalista especializada em saúde emocional de mulheres
           </span>
 
           <h1 className={styles.heroTitle}>
@@ -43,8 +43,9 @@ export default function Hero() {
           </h1>
 
           <p className={styles.heroDescription}>
-            Um espaço seguro e acolhedor para ouvir suas emoções, respeitar o
-            seu tempo e ajudar você a reencontrar a sua própria voz.
+            Atendimento psicanalítico online para desafios da maternidade,
+            ansiedade sobrecarga emocional, autoestima, luto, relacionamentos e
+            saúde mental feminina.
           </p>
 
           <Link
