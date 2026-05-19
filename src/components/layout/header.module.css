@@ -72,8 +72,10 @@
 }
 
 .btnCta {
+  margin-left: 2rem;
+  transform: translateY(-1px);
   background-color: var(--color-cta, #2d5a45);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   color: var(--color-cta-text, #ffffff);

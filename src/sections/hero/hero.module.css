@@ -240,12 +240,17 @@
   }
 
   .heroCta {
-    width: 90%;
-    max-width: 320px;
-    padding: 1.2rem;
+    width: auto;
+    max-width: 100%;
+    padding: 15px 22px;
+    border-radius: 8px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    font-size: 0.86rem;
+  }
+
+  .ctaIcon {
+    font-size: 1.25rem;
   }
 
   .heroMicrocopy {
