@@ -2,13 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
-import {
-  FiArrowLeft,
-  FiUser,
-  FiCalendar,
-  FiClock,
-  FiShare2,
-} from "react-icons/fi";
+import { FiArrowLeft, FiCalendar, FiClock, FiShare2 } from "react-icons/fi";
 import getPostBySlug from "@/actions/getPostBySlug";
 import { getDataHome } from "@/actions/getdata";
 import styles from "./page.module.css";
@@ -49,11 +43,11 @@ export default async function BlogPage({ params }: BlogParams) {
   const allPosts: Post[] = allPostsResponse?.objects || [];
   const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
-  const postUrl = `https://anaveigapsico.com.br/blog/${slug}`;
-  const shareText = encodeURIComponent(
-    `${post.title} — ${post.metadata.resumo ?? ""}`,
-  );
-  const whatsappShareUrl = `https://wa.me/?text=${shareText}%20${encodeURIComponent(postUrl)}`;
+  const postUrl = `https://anaveigapsico.vercel.app/${slug}`;
+
+  const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
+    `${post.title} — ${post.metadata.resumo ?? ""}\n\n${postUrl}`,
+  )}`;
 
   return (
     <main className={styles.page}>
