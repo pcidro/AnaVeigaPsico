@@ -42,7 +42,11 @@
 
 .slide {
   background:
-    radial-gradient(circle at top left, rgba(235, 222, 212, 0.18), transparent 34%),
+    radial-gradient(
+      circle at top left,
+      rgba(235, 222, 212, 0.18),
+      transparent 34%
+    ),
     linear-gradient(145deg, #2d5a45 0%, #224d38 54%, #173b2a 100%);
   border: 1px solid rgba(45, 90, 69, 0.12);
   border-radius: 8px;

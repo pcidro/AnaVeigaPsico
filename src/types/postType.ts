@@ -10,6 +10,9 @@ export interface Post {
     imagem_de_capa: Imagem;
     conteudo: string;
     data_da_publicacao: string;
+    escrito_por: string;
+    tempo_de_leitura: string;
+    categoria: string;
   };
 }
 
