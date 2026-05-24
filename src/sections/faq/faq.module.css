@@ -211,6 +211,28 @@
   }
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 86px 20px 90px;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .ctaText {
+    font-size: 0.94rem;
+  }
+}
+
 @media (max-width: 640px) {
   .section {
     padding: 82px 20px 88px;

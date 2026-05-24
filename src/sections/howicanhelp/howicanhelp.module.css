@@ -175,25 +175,86 @@
 }
 
 @media screen and (max-width: 768px) {
+  .section {
+    padding: 60px 16px;
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .servicesGrid {
+    gap: 12px;
+    margin-bottom: 42px;
+  }
+
+  .separator {
+    margin: 18px 0 42px;
+    width: 64px;
+  }
+
+  .serviceCard {
+    padding: 18px 14px;
+  }
+
+  .cardIcon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardText {
+    font-size: 0.85rem;
+  }
+
+  .timelineContainer {
+    padding: 12px 0;
+  }
+
   .timelineContainer::after {
-    left: 20px;
+    left: 16px;
   }
 
   .timelineItem {
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   .left,
   .right {
     left: 0;
     justify-content: flex-start;
-    padding-left: 60px;
+    padding-left: 48px;
     padding-right: 0;
   }
 
   .content {
-    max-width: 100%;
+    padding: 12px 14px;
+  }
+
+  .timelineTitle {
+    font-size: 1rem;
+  }
+
+  .timelineText {
+    font-size: 0.8rem;
+  }
+
+  .iconPlaceholder {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
   }
 
   .left .iconPlaceholder,

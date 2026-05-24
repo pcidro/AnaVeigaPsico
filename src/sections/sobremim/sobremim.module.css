@@ -223,6 +223,21 @@
   }
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 88px 20px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
 @media (max-width: 680px) {
   .section {
     padding: 82px 20px;
@@ -242,7 +257,7 @@
   }
 
   .title {
-    font-size: clamp(2.05rem, 10vw, 2.8rem);
+    font-size: 1.8rem;
     margin-bottom: 4px;
     order: 2;
     text-align: center;

@@ -62,8 +62,7 @@ const HowICanHelp = () => {
             </div>
             <h3 className={styles.cardTitle}>Formatos de Escuta</h3>
             <p className={styles.cardText}>
-              Terapia individual ou casal, check-in no divã e grupos
-              terapêuticos.
+              Terapia individual ou casal e grupos terapêuticos.
             </p>
           </div>
         </div>

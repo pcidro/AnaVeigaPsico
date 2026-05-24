@@ -415,17 +415,49 @@
   }
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 92px 20px 78px;
+  }
+
+  .header {
+    margin-bottom: 44px;
+    gap: 10px;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .columnEdge {
+    gap: 20px;
+  }
+
+  .card {
+    padding: 26px 24px;
+  }
+}
+
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 540px) {
   .section {
-    padding: 90px 20px;
+    padding: 78px 16px;
   }
 
   .header {
-    margin-bottom: 42px;
+    margin-bottom: 34px;
   }
 
   .grid {
@@ -463,8 +495,8 @@
   }
 
   .card {
-    flex: 0 0 min(84vw, 335px);
-    padding: 24px 22px;
+    flex: 0 0 min(86vw, 320px);
+    padding: 22px 20px;
     border-radius: 20px;
     scroll-snap-align: start;
     scroll-snap-stop: always;

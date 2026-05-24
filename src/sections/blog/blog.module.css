@@ -197,13 +197,31 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .section {
     padding: 82px 20px;
   }
 
   .header {
-    margin-bottom: 34px;
+    margin-bottom: 36px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 16px;
+  }
+
+  .header {
+    margin-bottom: 30px;
   }
 
   .grid {
@@ -211,10 +229,21 @@
   }
 
   .content {
-    padding: 22px;
+    padding: 18px;
   }
 
   .cardTitle {
-    font-size: 1.32rem;
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .action {
+    font-size: 0.72rem;
+    padding: 11px 15px;
   }
 }

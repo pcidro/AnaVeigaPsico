@@ -183,6 +183,24 @@
   }
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 76px 18px;
+  }
+
+  .header {
+    margin-bottom: 34px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 640px) {
   .section {
     padding: 68px 16px;
@@ -200,12 +218,12 @@
   }
 
   .title {
-    font-size: clamp(2rem, 10vw, 2.45rem);
+    font-size: 1.8rem;
     margin-bottom: 10px;
   }
 
   .subtitle {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.55;
   }
 

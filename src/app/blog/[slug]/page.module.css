@@ -438,6 +438,38 @@
   line-height: 1.2;
 }
 
+@media (max-width: 768px) {
+  .page {
+    padding: 118px 20px 88px;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .summary {
+    font-size: 1rem;
+  }
+
+  .content {
+    font-size: 1rem;
+    line-height: 1.74;
+  }
+
+  .ctaTitle,
+  .relatedTitle {
+    font-size: 1.8rem;
+  }
+
+  .ctaText {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 640px) {
   .page {
     padding: 112px 20px 82px;
