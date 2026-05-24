@@ -62,6 +62,7 @@ export default function FAQ() {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.ctaButton}
+            aria-label="Mais informações sobre o atendimento via WhatsApp"
           >
             <span>Mais Informações</span>
             <FaWhatsapp aria-hidden="true" />

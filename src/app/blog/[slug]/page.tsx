@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -26,6 +27,47 @@ function formatDate(date: string) {
     month: "long",
     year: "numeric",
   }).format(parsedDate);
+}
+
+export async function generateMetadata({
+  params,
+}: BlogParams): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Post não encontrado",
+    };
+  }
+
+  const title = post.title;
+  const description = post.metadata.resumo ?? "";
+  const images = post.metadata.imagem_de_capa?.url
+    ? [post.metadata.imagem_de_capa.url]
+    : [];
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime: post.metadata.data_da_publicacao,
+      url: `/blog/${slug}`,
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images,
+    },
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+  };
 }
 
 export default async function BlogPage({ params }: BlogParams) {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
@@ -25,6 +25,10 @@ export function generateStaticParams() {
   }));
 }
 
+function getImageUrl(image: string | StaticImageData) {
+  return typeof image === "string" ? image : image.src;
+}
+
 export async function generateMetadata({
   params,
 }: AreaPageProps): Promise<Metadata> {
@@ -32,12 +36,30 @@ export async function generateMetadata({
   const area = getAreaBySlug(slug);
 
   if (!area) {
-    notFound();
+    return { title: "Área não encontrada" };
   }
 
+  const imageUrl = getImageUrl(area.imagem);
+
   return {
-    title: `${area.nome} | Ana Veiga Psicanalista`,
+    title: area.nome,
     description: area.descricao,
+    openGraph: {
+      title: area.nome,
+      description: area.descricao,
+      url: `/areas/${slug}`,
+      type: "website",
+      images: [imageUrl],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: area.nome,
+      description: area.descricao,
+      images: [imageUrl],
+    },
+    alternates: {
+      canonical: `/areas/${slug}`,
+    },
   };
 }
 
@@ -94,8 +116,8 @@ function AreaContent({ area }: { area: AreaAtendimento }) {
         <section className={styles.cta}>
           <h2 className={styles.ctaTitle}>Vamos conversar sobre isso?</h2>
           <p className={styles.ctaText}>
-            Você pode iniciar seu processo com calma, no seu tempo, em um
-            espaço de escuta e acolhimento.
+            Você pode iniciar seu processo com calma, no seu tempo, em um espaço
+            de escuta e acolhimento.
           </p>
           <Link
             href={WHATSAPP_URL}

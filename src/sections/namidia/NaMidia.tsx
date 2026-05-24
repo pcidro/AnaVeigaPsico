@@ -138,7 +138,7 @@ export default function NaMidia() {
                   alt="Logo da CBN"
                   width={56}
                   height={56}
-                  quality={100}
+                  quality={75}
                   className={styles.logoImg}
                 />
 
@@ -171,7 +171,7 @@ export default function NaMidia() {
                   alt="Logo da Escola de Negócios"
                   width={56}
                   height={56}
-                  quality={100}
+                  quality={75}
                   className={styles.logoImg}
                 />
                 <h3 className={styles.cardTitle}>Escola dos Negócios</h3>
@@ -200,7 +200,7 @@ export default function NaMidia() {
                 alt="Ana na Mídia"
                 width={440}
                 height={660}
-                quality={100}
+                quality={75}
                 priority
                 className={styles.personImage}
               />
@@ -218,8 +218,7 @@ export default function NaMidia() {
                   src="/img/spotifylogo.png"
                   alt="Logo Spotify"
                   width={120}
-                  height={0}
-                  style={{ height: "auto" }}
+                  height={120}
                   className={styles.spotifyLogo}
                 />
               </div>
