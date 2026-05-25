@@ -5,7 +5,8 @@ import { Post } from "@/types/postType";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://anaveigapsico.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    "https://www.anaveigapsicanalista.com.br";
 
   // Static routes
   const routes = [

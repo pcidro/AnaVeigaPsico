@@ -85,7 +85,7 @@ export default async function BlogPage({ params }: BlogParams) {
   const allPosts: Post[] = allPostsResponse?.objects || [];
   const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
-  const postUrl = `https://anaveigapsico.vercel.app/blog/${slug}`;
+  const postUrl = `https://www.anaveigapsicanalista.com.br/blog/${slug}`;
 
   const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
     `${post.title} — ${post.metadata.resumo ?? ""}\n\n${postUrl}`,

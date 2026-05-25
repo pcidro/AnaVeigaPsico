@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://anaveigapsico.vercel.app"),
+  metadataBase: new URL("https://www.anaveigapsicanalista.com.br"),
   title: {
     default: "Ana Veiga | Psicanalista",
     template: "%s | Ana Veiga Psicanalista",
