@@ -7,6 +7,7 @@ import {
   GoogleReview,
 } from "@/types/googledepoimentostypes";
 const PLACE_DETAILS = "displayName,rating,userRatingCount,reviews";
+const DEFAULT_PLACE_QUERY = "Ana Veiga Psicanalista";
 
 function normalizeReview(review: GoogleReview): DepoimentoGoogle | null {
   const text = review.text?.text || review.originalText?.text;
@@ -19,6 +20,16 @@ function normalizeReview(review: GoogleReview): DepoimentoGoogle | null {
     text,
     rating: typeof review.rating === "number" ? review.rating : null,
   };
+}
+
+function getGoogleMapsPlaceUrl(placeId: string, placeName?: string) {
+  const params = new URLSearchParams({
+    api: "1",
+    query: placeName || DEFAULT_PLACE_QUERY,
+    query_place_id: placeId,
+  });
+
+  return `https://www.google.com/maps/search/?${params.toString()}`;
 }
 
 export async function getDepoimentosGoogle(): Promise<DepoimentosResult> {
@@ -55,7 +66,7 @@ export async function getDepoimentosGoogle(): Promise<DepoimentosResult> {
       ok: true,
       userRatingCount:
         typeof data.userRatingCount === "number" ? data.userRatingCount : null,
-      placeUrl: `https://www.google.com/maps/place/?q=place_id:${placeId}`,
+      placeUrl: getGoogleMapsPlaceUrl(placeId, data.displayName?.text),
       reviews,
       error: null,
     };
